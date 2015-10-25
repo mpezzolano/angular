@@ -6,14 +6,42 @@
     <script src="./bower_components/angular/angular.min.js" charset="UTF-8"></script>
     <script src="app.js" charset="UTF-8"></script>
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="UTF-8">
+    <style media="screen">
+        .option1{
+            background: red;
+        }
+        .option2{
+            background: green;
+        }
+    </style>
+
 </head>
 <body ng-controller="appCtrl">
-<h1 class="text-center text-danger">Factorias <small>Angular JS</small>  </h1>
-<div class="container">
-    <div class="row" ng-controller="appCtrl">
-        <pre>{{ users | json:4 }}</pre>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center text-danger">NG <small>Angular JS</small>  </h1>
+
+            <ul class="list-group" ng-repeat="numero in numeros" ng-show="numeros.length > 0">
+                <li class="list-group-item">{{ numero }}</li>
+            </ul>
+
+            <div ng-hide="bool === false">
+                {{ numeros | json }}
+            </div>
+
+            <div ng-switch="option">
+                <div ng-switch-when="1">1</div>
+                <div ng-switch-when="2">2</div>
+            </div>
+
+            <img ng-src="angular.jpeg" alt="AngularJS" />
+
+            <div ng-class="{option1: option==1, option2: option==2}">
+                Opción seleccionada
+            </div>
+
+        </div>
     </div>
-</div>
 
 
 </body>
