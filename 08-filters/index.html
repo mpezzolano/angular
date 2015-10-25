@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./bower_components/angular/angular.min.js" charset="UTF-8"></script>
+    <script src="app.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="UTF-8">
+</head>
+<body ng-controller="appCtrl">
+<div class="container">
+    <div class="row">
+        <h1 class="text-center text-danger">Filters <small>Angular JS</small>  </h1>
+
+        Realizar una búsqueda : <input ng-model="searchText" class="form-control"><hr>
+        <table class="table">
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Edad</th>
+
+            </tr>
+            <tr ng-repeat="usuario in usuarios | filter:searchText">
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.telefono}}</td>
+                <td>{{usuario.edad}}</td>
+            </tr>
+        </table>
+
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="nombre">Buscar por nombre</label>
+                <input name="nombre" ng-model="search.nombre">
+            </div>
+            <div class="form-group">
+                <label for="telefono">Buscar por tel</label>
+                <input name="telefono" ng-model="search.telefono">
+            </div>
+            <div class="form-group">
+                <label for="edad">Buscar por edad</label>
+                <input name="edad" ng-model="search.edad">
+            </div>
+        </form>
+
+        <table class="table">
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Edad</th>
+
+            </tr>
+            <tr ng-repeat="usuario in usuarios | filter:search">
+                <td>{{usuario.nombre}}</td>
+                <td>{{usuario.telefono}}</td>
+                <td>{{usuario.edad}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>
