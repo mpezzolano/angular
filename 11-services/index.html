@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./bower_components/angular/angular.min.js" charset="UTF-8"></script>
+    <script src="app.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="UTF-8">
+</head>
+<body ng-controller="appCtrl">
+<h1 class="text-center text-danger">Servicios <small>Angular JS</small>  </h1>
+<div class="container">
+    <div class="row" ng-controller="appCtrl">
+        <pre>{{ users | json:4 }}</pre>
+    </div>
+</div>
+
+
+</body>
+</html>
