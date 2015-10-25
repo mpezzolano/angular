@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="UTF-8">
 </head>
 <body ng-controller="appCtrl">
-   <div class="container">
-       <div class="row">
-           <h2>Usuarios</h2>
-           <ul class="list-group" ng-repeat="usuario in usuarios">
-               <li class="list-group-item">Nombre : {{ usuario.nombre }}, Edad : {{ usuario.edad }} </li>
-           </ul>
-       </div>
-   </div>
+<div class="container">
+    <div class="row">
+        <h1 class="text-center text-danger">NG-Include <small>Angular JS</small>  </h1>
+
+        <ng-include src="'template.html'"></ng-include>
+    </div>
+</div>
 
 
 </body>

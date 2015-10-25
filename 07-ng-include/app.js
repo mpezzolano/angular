@@ -1,15 +1,15 @@
 angular.module("app",[])
 
+
 .controller("appCtrl", function($scope){
     $scope.usuarios = [
         {
-            "nombre" : "Juan",
+            "nombre" : "juan",
             "edad"   : "28"
         },
         {
-            "nombre" : "Pablo",
-            "edad"   : "25"
+            "nombre" : "juan",
+            "edad"   : "28"
         }
     ];
-
 })
