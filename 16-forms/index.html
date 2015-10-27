@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <base href="/">
+    <script src="./bower_components/angular/angular.min.js" charset="utf-8"></script>
+    <script src="./bower_components/angular-route/angular-route.min.js" charset="UTF-8"></script>
+    <script src="./bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="app.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" title="no title" charset="UTF-8">
+</head>
+<body ng-controller="appCtrl">
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center text-danger">Formularios <small>AngularJS</small></h1>
+
+            <form name="registerForm" novalidate ng-submit="register(user)">
+                <fieldset>
+                    <legend>Formulario de registro</legend>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                name="email"
+                                class="form-control"
+                                required
+                                ng-model="user.email"
+                            >
+                        </div>
+                        <div ng-messages="registerForm.email.$error" ng-show="registerForm.email.$touched">
+                            <div ng-messages-include="messages.html"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="username">Nombre</label>
+                            <input
+                                    type="text"
+                                    name="username"
+                                    class="form-control"
+                                    required
+                                    ng-minlength=3
+                                    ng-maxlength=30
+                                    ng-model="user.username"
+                                    >
+                        </div>
+                        <div ng-messages="registerForm.username.$error" ng-show="registerForm.username.$touched">
+                            <div ng-messages-include="messages.html"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input
+                                    type="text"
+                                    name="password"
+                                    class="form-control"
+                                    required
+                                    ng-minlength=6
+                                    ng-model="user.password"
+                                    >
+                        </div>
+                        <div ng-messages="registerForm.password.$error" ng-show="registerForm.password.$touched">
+                            <div ng-messages-include="messages.html"></div>
+                        </div>
+
+                        <button type="submit" ng-disabled="registerForm.$invalid" class="btn btn-success btn-block">Submit</button>
+
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+
+
+
+</body>
+</html>
